@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 	if(isset($_GET['event'])&&$_GET['event']=='logout'){
 		unset($_SESSION['dangnhap']);
@@ -24,7 +24,7 @@ ddtabmenu.definemenu("ddtabs7", 6)
 
 
 </script>
-<nav style='height: 35px;'>
+<nav style='height: 35px;margin-top: -24px;'>
 <div id="ddtabs1" class="ddcolortabs">
 <ul>
         <li><a href="index.php"><span> Trang chủ</span></a></li>
