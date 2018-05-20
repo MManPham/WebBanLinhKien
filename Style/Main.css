@@ -283,3 +283,12 @@ footer
     {
         background-color: none;
     }
+    #noiDungTinTuc table td img
+    {
+        width: 100px;
+        margin-top:10px;
+    }
+     #noiDungTinTuc table td 
+     {
+        padding-top: 10px;
+     }

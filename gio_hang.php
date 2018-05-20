@@ -6,16 +6,19 @@ include_once('connect_DB.php');
 <head>
     <meta charset="utf-8" />
     <title>Bán linh kiến</title>
-
+    <link rel="icon" type="images/x-icon" href="images/favicon.ico" />
     <link href="Style/Main.css" rel="stylesheet" />
-    <link href="Style/gio_hang.css" rel="stylesheet" />
+        <link href="Style/gio_hang.css" rel="stylesheet" />
+    <link href="Style/san_pham.css" rel="stylesheet" />
     <link href="jquery-simplyscroll-2.0.5/jquery.simplyscroll.css" rel="stylesheet" />
     <link href="Style/jquery-ui.css" rel="stylesheet" />
     <script src="Js/jquery-3.2.1.min.js" rel="stylesheet"></script>
-    <?php 
-    include_once('Model/capNhatCTHD.php');
-    include_once('Model/xoaCTHD.php');
-    ?>
+
+
+    <?php include_once("Model/xoaCTHD.php");?>
+    <?php include_once("Model/themCTHD.php");?>
+    <?php include_once("Model/capNhatCTHD.php");?>
+        
 
 </head>
 <body>
