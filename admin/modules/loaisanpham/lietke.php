@@ -26,14 +26,13 @@
 	
 ?>
 
-<table class="table table-hover" width="100%" border="0">
+<table class="table table-hover feildContent " width="100%" border="0">
   <tr>
     <td width="51"><div align="center">ID</div></td>
-    <td width="116"><div align="center">Tên loại sp</div></td>
-    <td width="100"><div align="center">Mã loại cha</div></td>
+    <td width="150px"><div align="center">Tên loại sp</div></td>
+    <td width="150px"><div align="center">Tên loại cha</div></td>
 
     <td width="143"><div align="center">Hình ảnh</div></td>
-    <td width="182"><div align="center">Mô tả</div></td>
     <td colspan="2"><div align="center">Quản lí</div></td>
   </tr>
   <?php
@@ -44,10 +43,35 @@
   <tr>
     <td height="70"><?php echo $sp['ma_loai']; ?></td>
     <td><?php echo $sp['ten_loai']; ?></td>
-    <td><?php echo $sp['ma_loai_cha']; ?></td>
+    <?php 
+    if($sp['ma_loai_cha']!=0){
+    	$sql_loaicha="select * from loai_san_pham";
+    	$stmt_loaicha = $db->prepare($sql_loaicha);
+	  	$stmt_loaicha->setFetchMode(PDO::FETCH_ASSOC);
+  		$stmt_loaicha->execute();
+      $data_loaicha = $stmt_loaicha->fetchAll();
+  		foreach($data_loaicha as $loaicha){
+	  		if($sp['ma_loai_cha']==$loaicha['ma_loai']){ ?>
+    <td>
+   
+         <?php echo $loaicha['ten_loai']; ?>
+       
+    </td>
+    <?php
+      }
+
+    } ?>
+      
+    <td><div align="center"></div></td>
+    		
+    <?php } else { ?>
+   	<td>
     
+    </td>
     <td><div align="center"><img src="modules/loaisanpham/upload/<?php echo $sp['hinh_loaisp'];?>" class="img-thumbnail"></div></td>
-    <td><?php echo $sp['mo_ta']; ?></td>
+	<?php } ?>
+   
+
     <td width="64"><div align="center">
    
 	<a href="index.php?quanly=loaisp&event=sua&trang=<?php echo $get_trang;?>&id=<?php echo $sp['ma_loai']?>" >Sửa</a>
@@ -73,6 +97,6 @@
 		 ?>
     <li class="page-item"><a class="page-link" href="index.php?quanly=loaisp&event=them&trang=<?php echo $i ?>"><?php echo $i ?></a></li>
     <?php } ?>
- <a class="page-link" href="#" >Next</a>
-    </ul>
+ 	<a class="page-link" href="#" >Next</a>
+   </ul>
     
