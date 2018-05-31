@@ -64,7 +64,7 @@
 			for($i=1;$i<=$dem;$i++){
 			
 		 ?>
-    <li class="page-item"><a class="page-link" href="index.php?quanly=hoadon&event=them&trang=<?php echo $i ?>"><?php echo $i ?></a></li>
+    <li class="page-item"><a class="page-link" href="index.php?quanly=hoadon&trang=<?php echo $i ?>"><?php echo $i ?></a></li>
     <?php } ?>
  <a class="page-link" href="#" >Next</a>
  </ul>

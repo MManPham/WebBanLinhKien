@@ -1,8 +1,8 @@
 <?php 
 if(!isset($_REQUEST["ma_bai_viet"])) {
-    $tinTuc= mysql_query("SELECT * FROM bai_viet where 	ma_loai_bai_viet >0 ");
+    $tinTuc= mysqli_query($connect,"SELECT * FROM bai_viet where 	ma_loai_bai_viet >0 ");
     echo '<h2> Tin Tức </h2>';
-    while( $row = mysql_fetch_assoc($tinTuc))
+    while( $row = mysqli_fetch_assoc($tinTuc))
     {
     ?>
 
@@ -23,8 +23,8 @@ if(!isset($_REQUEST["ma_bai_viet"])) {
 else
 {
     $maBV= $_REQUEST["ma_bai_viet"];
-    $tinTuc= mysql_query("SELECT * FROM bai_viet where 	ma_bai_viet = ".$maBV);
-    while( $row = mysql_fetch_assoc($tinTuc))
+    $tinTuc= mysqli_query($connect,"SELECT * FROM bai_viet where 	ma_bai_viet = ".$maBV);
+    while( $row = mysqli_fetch_assoc($tinTuc))
     {
     ?>
 
@@ -43,3 +43,7 @@ else
 }
 
 ?>
+
+
+
+

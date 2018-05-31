@@ -1,11 +1,11 @@
 <?php 
 if(!isset($_REQUEST["ma_san_pham"]))
 {
-    $bangsp= mysql_query("SELECT * FROM san_pham ");
+    $bangsp= mysqli_query($connect,"SELECT * FROM san_pham ");
     echo" <section id='SP' class='feildContent'>
           <h2>Sản Phẩm Mới</h2>
           <div id='hienThiSPMoi'>";
-    while( $row = mysql_fetch_assoc($bangsp))
+    while( $row = mysqli_fetch_assoc($bangsp))
     {
     ?>
       <div class="sanPham">
@@ -30,11 +30,11 @@ if(!isset($_REQUEST["ma_san_pham"]))
 }
 else
 {
-  $bangsp= mysql_query("SELECT * FROM san_pham where ma_san_pham= ".$_REQUEST["ma_san_pham"]);
+  $bangsp= mysqli_query($connect,"SELECT * FROM san_pham where ma_san_pham= ".$_REQUEST["ma_san_pham"]);
   echo" <section id='chiTiet' class='feildContent'>
           <h2>Chi tiết sản phẩm</h2>
           <div id='hienThiSPMoi'>";
-    while( $row = mysql_fetch_assoc($bangsp))
+    while( $row = mysqli_fetch_assoc($bangsp))
     {
         $maloai = $row["ma_loai"];
     ?>
@@ -63,11 +63,11 @@ else
     echo "<div class='clear'></div>
     </div>
     </section>";
-    $bangSPKhac= mysql_query("SELECT * FROM san_pham where  ma_loai= ".$maloai." AND ma_san_pham <>".$_REQUEST["ma_san_pham"]);
+    $bangSPKhac= mysqli_query($connect,"SELECT * FROM san_pham where  ma_loai= ".$maloai." AND ma_san_pham <>".$_REQUEST["ma_san_pham"]);
     echo" <section id='SP' class='feildContent'>
     <h2>Sản Phẩm Khác ".$row["ma_loai"]."</h2>
     <div id='hienThiSPMoi'>";
-    while( $row2 = mysql_fetch_assoc($bangSPKhac))
+    while( $row2 = mysqli_fetch_assoc($bangSPKhac))
     {
     ?>
     <div class="sanPham">

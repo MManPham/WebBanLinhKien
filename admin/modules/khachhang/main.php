@@ -6,21 +6,6 @@
 		include('modules/khachhang/lietke.php');
 	?>
 </div>
-<div class=" feildContent bot">
-	<?php
-	if(isset($_GET['event'])){
-		$tam=$_GET['event'];
-	}
-	else{
-		$tam='';
-	}
-	if($tam=='them'){
-		include('modules/khachhang/them.php');
-	}elseif($tam=='sua'){
-		include('modules/khachhang/sua.php');
-	}
-	?>
-</div>
 </article>
 	<script>
 	$('.ddcolortabs').attr('id','ddtabs2');

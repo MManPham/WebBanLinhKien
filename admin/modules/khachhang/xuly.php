@@ -19,7 +19,7 @@
 		$stmt = $db->prepare($sql);
 		$stmt->setFetchMode(PDO::FETCH_ASSOC);
 		$stmt->execute();
-		header('location:../../index.php?quanly=khachhang&event=them');
+		header('location:../../index.php?quanly=khachhang');
 	}elseif(isset($_POST['sua'])){
 		//sua
 	$tenkh=$_POST['tenkh'];
@@ -38,13 +38,13 @@
 		$stmt = $db->prepare($sql);
 		$stmt->setFetchMode(PDO::FETCH_ASSOC);
 		$stmt->execute();
-		header('location:../../index.php?quanly=khachhang&event=sua&id='.$id);
+		header('location:../../index.php?quanly=khachhang&id='.$id);
 	}else{
 		//xoa
 		$sql="delete from khach_hang where ma_khach_hang='$id'";
 		$stmt = $db->prepare($sql);
 		$stmt->setFetchMode(PDO::FETCH_ASSOC);
 		$stmt->execute();
-		header('location:../../index.php?quanly=khachhang&event=them');
+		header('location:../../index.php?quanly=khachhang');
 	}
 ?>

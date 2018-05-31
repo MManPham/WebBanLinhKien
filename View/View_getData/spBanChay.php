@@ -1,12 +1,12 @@
 ﻿<?php
 if(!isset($_REQUEST["ma_loai"]))
 {
-  $bangsp= mysql_query("SELECT * FROM san_pham order by ngay_tao desc  limit 0,16");
+  $bangsp= mysqli_query($connect,"SELECT * FROM san_pham order by ngay_tao desc  limit 0,16");
  
   echo"<section id='spBanChay' class='feildContent'>
       <h2>Sản Phẩm Bán Chạy</h2>  
       <div id='hienThiSPBC'>";
-  while( $row = mysql_fetch_assoc($bangsp))
+  while( $row = mysqli_fetch_assoc($bangsp))
   {
 ?>
   <div class="sanPham">

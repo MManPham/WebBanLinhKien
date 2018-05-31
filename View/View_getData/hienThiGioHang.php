@@ -6,8 +6,8 @@ if(isset($_REQUEST['dat_hang']))
 }
 else
 {
-    $giohang= mysql_query("SELECT * FROM ct_hoa_don where so_hoa_don  = 0 ");
-    while( $row = mysql_fetch_assoc($giohang))
+    $giohang= mysqli_query($connect,"SELECT * FROM ct_hoa_don where so_hoa_don  = 0 ");
+    while( $row = mysqli_fetch_assoc($giohang))
     {
         $tongTien = $tongTien+ ($row['don_gia'] * $row['so_luong']);
     }

@@ -8,8 +8,8 @@
             MaSP:"",
         }
         <?php
-          $sql= mysql_query("SELECT * FROM san_pham ");
-            while( $row = mysql_fetch_assoc($sql))
+          $sql= mysqli_query($connect,"SELECT * FROM san_pham ");
+            while( $row = mysqli_fetch_assoc($sql))
             {
          ?>     
                 SP = {

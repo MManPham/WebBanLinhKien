@@ -1,11 +1,11 @@
 <?php 
 if(!isset($_REQUEST["ma_loai"]))
 {
-    $bangsp= mysql_query("SELECT * FROM san_pham where  san_pham_moi = 1");
+    $bangsp= mysqli_query($connect,"SELECT * FROM san_pham where  san_pham_moi = 1");
     echo" <section id='spBanMoi' class='feildContent'>
           <h2>Sản Phẩm Mới</h2>
           <div id='hienThiSPMoi'>";
-    while( $row = mysql_fetch_assoc($bangsp))
+    while( $row = mysqli_fetch_assoc($bangsp))
     {
     ?>
       <div class="sanPham">

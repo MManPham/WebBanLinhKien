@@ -1,8 +1,8 @@
 <?php
 if(isset($_REQUEST["xem_gio_hang"]))
 {
-    $timsanpham = mysql_query("SELECT * FROM ct_hoa_don where so_hoa_don= 0");  
-    if(mysql_num_rows($timsanpham)==0)
+    $timsanpham = mysqli_query($connect,"SELECT * FROM ct_hoa_don where so_hoa_don= 0");  
+    if(mysqli_num_rows($timsanpham)==0)
     {
         echo "<h1>Chưa có sản phẩm trong giỏ hàng</h1>";
     }
@@ -20,11 +20,11 @@ if(isset($_REQUEST["xem_gio_hang"]))
         </tr>
         <?php
 
-        $bangsp= mysql_query("SELECT * FROM ct_hoa_don where so_hoa_don = 0");
-        while( $row = mysql_fetch_assoc($bangsp))
+        $bangsp= mysqli_query($connect,"SELECT * FROM ct_hoa_don where so_hoa_don = 0");
+        while( $row = mysqli_fetch_assoc($bangsp))
         {
-        $hinh =mysql_query("SELECT * FROM san_pham where ma_san_pham = ".$row["ma_san_pham"]) or die(mysql_error());
-        $row2= mysql_fetch_assoc($hinh);
+        $hinh =mysqli_query($connect,"  SELECT * FROM san_pham where ma_san_pham = ".$row["ma_san_pham"]) or die(mysqli_error());
+        $row2= mysqli_fetch_assoc($hinh);
         ?>  
         <tr class="rowHang" >
             <td class="tenSP" style="padding:10px" >

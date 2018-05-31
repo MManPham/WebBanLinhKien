@@ -20,7 +20,7 @@
 		$stmt = $db->prepare($sql);
 		$stmt->setFetchMode(PDO::FETCH_ASSOC);
 		$stmt->execute();
-		header('location:../../index.php?quanly=loaisp&event=them');
+		header('location:../../index.php?quanly=loaisp');
 	}elseif(isset($_POST['sua'])){
 		//sua
 	$tenloaisp=$_POST['tenloaisp'];
@@ -40,13 +40,13 @@
 		$stmt = $db->prepare($sql);
 		$stmt->setFetchMode(PDO::FETCH_ASSOC);
 		$stmt->execute();
-		header('location:../../index.php?quanly=loaisp&event=sua&id='.$id);
+		header('location:../../index.php?quanly=loaisp&id='.$id);
 	}else{
 		//xoa
 		$sql="delete from loai_san_pham where ma_loai='$id'";
 		$stmt = $db->prepare($sql);
 		$stmt->setFetchMode(PDO::FETCH_ASSOC);
 		$stmt->execute();
-		header('location:../../index.php?quanly=loaisp&event=them');
+		header('location:../../index.php?quanly=loaisp');
 	}
 ?>

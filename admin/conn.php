@@ -1,7 +1,7 @@
 <?php
 $dsn ='mysql:host=localhost;dbname=QLBanHang';
 $username ='root';
-$password ='1234';
+$password ='';
 
 try{
 	$db = new PDO($dsn, $username, $password);

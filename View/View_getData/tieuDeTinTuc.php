@@ -1,6 +1,6 @@
 <?php 
-    $gioiThieu= mysql_query("SELECT * FROM bai_viet where 	ma_loai_bai_viet >0 ");
-    while( $row = mysql_fetch_assoc($gioiThieu))
+    $gioiThieu= mysqli_query($connect,"SELECT * FROM bai_viet where 	ma_loai_bai_viet >0 ");
+    while( $row = mysqli_fetch_assoc($gioiThieu))
     {
     ?>
 <p>

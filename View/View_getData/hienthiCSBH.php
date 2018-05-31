@@ -1,6 +1,6 @@
 <?php 
-    $gioiThieu= mysql_query("SELECT * FROM bai_viet where tieu_de = 'Chính sách bảo hành' ");
-    while( $row = mysql_fetch_assoc($gioiThieu))
+    $gioiThieu= mysqli_query($connect,"SELECT * FROM bai_viet where tieu_de = 'Chính sách bảo hành' ");
+    while( $row = mysqli_fetch_assoc($gioiThieu))
     {
     ?>
 

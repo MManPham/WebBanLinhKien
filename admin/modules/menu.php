@@ -28,10 +28,10 @@ ddtabmenu.definemenu("ddtabs7", 6)
 <div id="ddtabs1" class="ddcolortabs">
 <ul>
         <li><a href="index.php"><span> Trang chủ</span></a></li>
-        <li><a href="index.php?quanly=khachhang&event=them"><span>Khách hàng</span></a></li>
-        <li><a href="index.php?quanly=baiviet&event=them"><span>Bài viết</span></a></li>
-        <li><a href="index.php?quanly=sanpham&event=them"><span>Sản phẩm</span></a></li>
-        <li><a href="index.php?quanly=loaisp&event=them"><span>Loại sản phẩm</span></a></li>
+        <li><a href="index.php?quanly=khachhang"><span>Khách hàng</span></a></li>
+        <li><a href="index.php?quanly=baiviet"><span>Bài viết</span></a></li>
+        <li><a href="index.php?quanly=sanpham"><span>Sản phẩm</span></a></li>
+        <li><a href="index.php?quanly=loaisp"><span>Loại sản phẩm</span></a></li>
         <li><a href="index.php?quanly=hoadon"><span>Hóa đơn</span></a></li>
     
         <div style="float:right">

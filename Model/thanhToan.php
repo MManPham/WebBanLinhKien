@@ -8,24 +8,24 @@
         $diaChi = $_REQUEST['DiaChi'];
         $SDT = $_REQUEST['SDT'];
         $email = $_REQUEST['Email'];
-        $KH_moi = mysql_query("INSERT INTO  khach_hang(ten_khach_hang,phai,ngay_sinh, dia_chi, dien_thoai, email) 
-                    VALUES('$tenKH', '$phai','$ngaySinh','$diaChi','$SDT','$email')") or mysql_error();
+        $KH_moi = mysqli_query($connect,"INSERT INTO  khach_hang(ten_khach_hang,phai,ngay_sinh, dia_chi, dien_thoai, email) 
+                    VALUES('$tenKH', '$phai','$ngaySinh','$diaChi','$SDT','$email')") ;
         
         //Them hoa don
         $TongTien=$_REQUEST['TongTien'];
-        $ma_KH=mysql_insert_id();
+        $ma_KH=mysqli_insert_id($connect);
         $ngayHd =date("Y-m-d");
-        mysql_query("INSERT INTO  hoa_don(ngay_hd,ma_khach_hang,tri_gia) 
-                    VALUES('$ngayHd' ,'$ma_KH','$TongTien')") or mysql_error();
+        mysqli_query($connect,"INSERT INTO  hoa_don(ngay_hd,ma_khach_hang,tri_gia) 
+                    VALUES('$ngayHd' ,'$ma_KH','$TongTien')") ;
 
-        $soHD = mysql_insert_id();
-        mysql_query("UPDATE ct_hoa_don SET so_hoa_don = ".$soHD." where so_hoa_don = 0");
+        $soHD = mysqli_insert_id($connect);
+        mysqli_query($connect,"UPDATE ct_hoa_don SET so_hoa_don = ".$soHD." where so_hoa_don = 0");
         echo "<h1>Bạn đã thanh toán thành công</h1>";
     }
     else 
-    {   
-        $timsanpham = mysql_query("SELECT * FROM ct_hoa_don where so_hoa_don= 0");  
-        if(mysql_num_rows($timsanpham)==0)
+    {       
+        $timsanpham = mysqli_query ( $connect,"SELECT * FROM ct_hoa_don where so_hoa_don= 0");  
+        if(mysqli_num_rows($timsanpham)==0)
         {
             echo "<h1>Chưa có sản phẩm nào trong giỏ hàng của bạn</h1>";
         }

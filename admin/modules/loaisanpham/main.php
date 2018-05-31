@@ -1,20 +1,12 @@
-<div class="top">
+
+<article style="width: 100%;">
+<div class="top feildContent">
 	<?php
 		include('modules/loaisanpham/lietke.php');
 	?>
 </div>
-<div class="bot">
-	<?php
-	if(isset($_GET['event'])){
-		$tam=$_GET['event'];
-	}
-	else{
-		$tam='';
-	}
-	if($tam=='them'){
-		include('modules/loaisanpham/them.php');
-	}elseif($tam=='sua'){
-		include('modules/loaisanpham/sua.php');
-	}
-	?>
-</div>
+</article>
+	<script>
+	$('.ddcolortabs').attr('id','ddtabs5');
+	console.log( $('.ddcolortabs').attr('id'));
+	</script>
