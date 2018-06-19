@@ -4,15 +4,16 @@ include_once('connect_DB.php');
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <title>Bán linh kiến</title>
+<meta charset="utf-8" />
+    <title>Bán linh kiện</title>
+    <link rel="icon" type="images/x-icon" href="images/favicon.ico" />
 
     <link href="Style/Main.css" rel="stylesheet" />
+    <link href="Style/ho_tro.css" rel="stylesheet" />
     <link href="jquery-simplyscroll-2.0.5/jquery.simplyscroll.css" rel="stylesheet" />
     <link href="Style/jquery-ui.css" rel="stylesheet" />
     <script src="Js/jquery-3.2.1.min.js" rel="stylesheet"></script>
     
-
 </head>
 <body>
     <div id="container">
@@ -120,8 +121,9 @@ include_once('connect_DB.php');
         <div class="clear"></div>
         <footer >
             <p>
+            Bài làm được thực hiện bởi nhóm 1. Môn phát triển ứng dụng Web. Đại Học CNTT Tp.HCM<br/>
                 Bản quyền thuộc ngành lập trình, Trung tâm tinh học. Đại học KHTN Tp.HCM<br/>
-                Thông tin liên hệ: alphatek@hcmuns.edu.vn
+      
         </p>
         </footer>
     </div>

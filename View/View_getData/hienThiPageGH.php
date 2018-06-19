@@ -36,7 +36,7 @@ if(isset($_REQUEST["xem_gio_hang"]))
             <td><?php echo $row['don_gia'] * $row['so_luong']  ?></td>
 
             <td >
-                <a id="<?php echo $row2["ma_san_pham"]?>" class="btnCN" href="#">CN</a>
+                <a id="<?php echo $row2["ma_san_pham"]?>" class="btnCN" href="#">Cập Nhật</a>
                 <a class="Xoa" href="gio_hang.php?xem_gio_hang&ma_sp_xoa=<?php echo $row2["ma_san_pham"]?>">Xóa</a>
             </td>   
             
